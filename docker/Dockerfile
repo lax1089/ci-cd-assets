@@ -3,8 +3,7 @@ EXPOSE 8080
 EXPOSE 5000
 # Set the Jenkins environment to support Headless selenium testing
 
-ENV JAVA_OPTS "-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=\"default-
-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' 'unsafe-inline' data:;\""
+ENV JAVA_OPTS "-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' 'unsafe-inline' data:;\""
 
 # As the root user, install software
 USER root
@@ -12,8 +11,7 @@ USER root
 RUN apt-get -y update
 # Download and install Chrome browser
 RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
-RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/s
-ources.list.d/google-chrome.list
+RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
 RUN apt-get -y update
 RUN apt-get -y install google-chrome-stable
 # Download Chromedriver
@@ -26,8 +24,7 @@ RUN chmod +x /usr/bin/chromedriver
 RUN apt-get install -y firefox-esr
 # Download Geckodriver
 
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-
-v0.25.0-linux64.tar.gz
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
 
 RUN tar -xvzf geckodriver*
 RUN mv geckodriver /usr/bin/geckodriver
