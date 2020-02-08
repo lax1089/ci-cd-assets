@@ -34,6 +34,6 @@ node {
         alwaysLinkToLastBuild: true,
         allowMissing: false
     ])
-      archiveArtifacts 'target/*.jar'
+      archiveArtifacts 'target/*.war'
    }
 }
