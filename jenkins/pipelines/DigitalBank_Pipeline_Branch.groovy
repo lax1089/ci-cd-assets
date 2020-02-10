@@ -6,6 +6,7 @@ node {
    def GITHUB_PROJECT_URL = "https://github.com/asburymr/Digital-Bank.git"
    def APPLICATION_NAME = "Digital-Bank"
    def GITHUB_BRANCH = '${env.BRANCH_NAME}'
+   def BRANCH_SCOPE = ''
    
    //properties([
    //  parameters([
@@ -24,7 +25,7 @@ node {
    stage('Branch Param User Input') {
       branch_list = readFile 'branch.txt'
       echo "Please click here to chose the branch to build"
-      env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Validate!',
+      BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Validate!',
       parameters: [choice(name: 'BRANCH_NAME', choices: "${branch_list}", description: 'Branch to build?')]
    }
    
