@@ -1,12 +1,18 @@
 /*
-DigitalBank CI pipe which detects any new commits to the git repo and then pulls the code, builds the new jar, executes limited set of Smoke tests (Serenity UI/API) remotely, and reports on the results.
+DigitalBank CI pipe which pulls the code of a specified branch, builds the new war, executes limited set of Smoke tests (Serenity UI/API) remotely, and reports on the results.
 */
 node {
    def mvnHome
    
+   properties([
+     parameters([
+       string(name: 'BRANCH', defaultValue: '', description: 'git branch to pull', )
+      ])
+   ])
+   
    stage('Pull Code') {
       // Pull code from the GitHub repository
-      git 'https://github.com/asburymr/Digital-Bank.git'
+      git branch: '${params.BRANCH}', url: 'https://github.com/asburymr/Digital-Bank.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured in the global configuration.           
       mvnHome = tool 'M3'
