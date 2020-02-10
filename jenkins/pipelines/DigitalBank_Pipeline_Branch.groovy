@@ -40,13 +40,13 @@ node {
    
    stage('Build') {  
       // Run the maven build
-      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore -DskipUnitTests clean package -DbuildNumber=${BUILD_NUMBER}"
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore -DskipUnitTests clean package"
    }
    
    stage('Run Tests') {
       wrap([$class: 'Xvfb', additionalOptions: '', assignedLabels: '', autoDisplayName: true, debug: true, displayNameOffset: 1, installationName: 'default-xvfb', parallelBuild: true, screen: '1440x900x24', timeout: 25]) 
       {
-        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore -DskipUnitTests clean verify -Dcucumber.options='--tags @positive' -Dserver.port=9092 -Dwebdriver.base.url='http://localhost:9092' -Dwebdriver.driver=firefox -Dio.demo.bank.atm.host=atmlocationsearch1032-8080-default.mock.blazemeter.com"
+        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore -DskipUnitTests clean verify -Dcucumber.options='--tags @positive' -Dserver.port=9092 -Dwebdriver.base.url='http://localhost:9092' -Dwebdriver.driver=firefox -Dio.demo.bank.atm.host=atmlocationsearch1032-8080-default.mock.blazemeter.com -DbuildNumber=${BUILD_NUMBER}"
       }
    }
    
