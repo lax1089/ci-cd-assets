@@ -30,7 +30,7 @@ node {
    }
    
    stage('Pull Code') {
-      echo "Pulling code with params env.BRANCH_SCOPE=${env.BRANCH_SCOPE}, BRANCH_SCOPE=${BRANCH_SCOPE}, BRANCH=${BRANCH_NAME}, env.BRANCH_NAME=${env.BRANCH_NAME}"
+      echo "Pulling code from BRANCH_SCOPE=${BRANCH_SCOPE}"
       // Pull code from the GitHub repository
       git branch: "${BRANCH_SCOPE}", url: 'https://github.com/asburymr/Digital-Bank.git'
       // Get the Maven tool.
