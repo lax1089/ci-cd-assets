@@ -31,7 +31,7 @@ node {
    stage('Pull Code') {
       echo "Pulling code with params env.BRANCH_SCOPE=${env.BRANCH_SCOPE}, BRANCH_SCOPE=${BRANCH_SCOPE}, BRANCH=${BRANCH_NAME}, env.BRANCH_NAME=${env.BRANCH_NAME}"
       // Pull code from the GitHub repository
-      git branch: "${BRANCH_NAME}", url: 'https://github.com/asburymr/Digital-Bank.git'
+      git branch: "${BRANCH_SCOPE}", url: 'https://github.com/asburymr/Digital-Bank.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured in the global configuration.           
       mvnHome = tool 'M3'
