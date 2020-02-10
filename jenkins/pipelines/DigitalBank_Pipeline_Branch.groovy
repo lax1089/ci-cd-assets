@@ -19,7 +19,7 @@ node {
       echo GITHUB_PROJECT_URL
       git url: GITHUB_PROJECT_URL
       sh 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >branches.txt'
-      sh "'cut -d '/' -f 2 branches.txt > branch.txt'"
+      sh "'cut -d '/' -f 2 branches.txt > branch.txt"'
    }
    
    stage('Branch Param User Input') {
