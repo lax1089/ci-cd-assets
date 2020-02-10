@@ -4,6 +4,7 @@ DigitalBank CI pipe which pulls the code of a specified branch, builds the new w
 node {
    def mvnHome
    def GITHUB_PROJECT_URL = "https://github.com/asburymr/Digital-Bank.git"
+   def BRANCH_NAME = "NOT_WORKING"
    
    //properties([
    //  parameters([
@@ -28,7 +29,7 @@ node {
    }
    
    stage('Pull Code') {
-      echo "Pulling code from ${env.BRANCH_SCOPE}"
+      echo "Pulling code with params env.BRANCH_SCOPE=${env.BRANCH_SCOPE}, BRANCH_SCOPE=${BRANCH_SCOPE}, BRANCH=${BRANCH_NAME}, env.BRANCH_NAME=${env.BRANCH_NAME}"
       // Pull code from the GitHub repository
       git branch: "${BRANCH_NAME}", url: 'https://github.com/asburymr/Digital-Bank.git'
       // Get the Maven tool.
