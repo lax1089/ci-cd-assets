@@ -40,7 +40,7 @@ node {
    
    stage('Build') {  
       // Run the maven build
-      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore -DskipUnitTests clean package"
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore -DskipUnitTests clean package -DbuildNumber=${BUILD_NUMBER}"
    }
    
    stage('Run Tests') {
