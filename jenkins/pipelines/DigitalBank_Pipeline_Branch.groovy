@@ -19,6 +19,7 @@ node {
       git url: GITHUB_PROJECT_URL
       sh 'rm branch.txt'
       sh 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt'
+      cat 'branch.txt'
    }
    
    stage('Branch Param User Input') {
