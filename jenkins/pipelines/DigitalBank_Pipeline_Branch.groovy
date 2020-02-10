@@ -22,7 +22,7 @@ node {
       sh "'cut -d '/' -f 2 branches.txt > branch.txt'"
    }
    
-   stage('Branch Param User Input’) {
+   stage('Branch Param User Input') {
       branch_list = readFile 'branch.txt'
       echo "Please click here to chose the branch to build"
       env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Validate!',
