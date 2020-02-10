@@ -17,13 +17,13 @@ node {
       //checkout code
       echo GITHUB_PROJECT_URL
       git url: GITHUB_PROJECT_URL
-      sh 'rm branch.txt'
-      sh 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt'
-      cat 'branch.txt'
+      sh 'rm branches.txt'
+      sh 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >> branches.txt'
+      sh 'cat branches.txt'
    }
    
    stage('Branch Param User Input') {
-      branch_list = readFile 'branch.txt'
+      branch_list = readFile 'branches.txt'
       echo "Please click here to chose the branch to build"
       env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Confirm',
       parameters: [choice(name: 'BRANCH_NAME', choices: "${branch_list}", description: 'Branch to build?')]
