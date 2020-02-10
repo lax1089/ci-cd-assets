@@ -22,7 +22,7 @@ node {
    stage('Branch Param User Input') {
       branch_list = readFile 'branch.txt'
       echo "Please click here to chose the branch to build"
-      env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Validate!',
+      env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Confirm',
       parameters: [choice(name: 'BRANCH_NAME', choices: "${branch_list}", description: 'Branch to build?')]
    }
    
