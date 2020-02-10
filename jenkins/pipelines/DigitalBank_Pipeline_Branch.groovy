@@ -7,11 +7,11 @@ node {
    def APPLICATION_NAME = "Digital-Bank"
    def GITHUB_BRANCH = '${env.BRANCH_NAME}'
    
-   properties([
-     parameters([
-       string(name: 'BRANCH', defaultValue: '', description: 'git branch to pull', )
-      ])
-   ])
+   //properties([
+   //  parameters([
+   //    string(name: 'BRANCH', defaultValue: '', description: 'git branch to pull', )
+   //   ])
+   //])
    
    stage ('Listing Branches') {
       echo "Initializing workflow"
