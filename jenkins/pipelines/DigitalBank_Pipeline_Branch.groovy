@@ -1,5 +1,7 @@
 /*
-DigitalBank CI pipe which pulls the code of a specified branch, builds the new war, executes limited set of Smoke tests (Serenity UI/API) remotely, and reports on the results.
+DigitalBank CI pipe which gets all git branches for the repo, prompts user to select the branch they want to build, 
+pulls the code of a specified branch, builds the new war, executes limited set of Smoke tests (Serenity UI/API) remotely, 
+and reports on the results.
 */
 node {
    def mvnHome
