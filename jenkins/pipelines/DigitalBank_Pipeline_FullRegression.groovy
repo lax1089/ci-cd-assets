@@ -20,7 +20,7 @@ node {
    stage('Run Regression Tests') {
       echo "###Functional/Regression Tests###"
       wrap([$class: 'Xvfb', additionalOptions: '', assignedLabels: '', autoDisplayName: true, debug: true, displayNameOffset: 0, installationName: 'default-xvfb', parallelBuild: true, screen: '1440x900x24', timeout: 25]) {
-        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean verify -Dserver.port=9092 -Dwebdriver.base.url='http://localhost:9092' -Dwebdriver.driver=firefox"
+        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean verify -Dserver.port=9092 -Dwebdriver.base.url='http://localhost:9092/bank' -Dwebdriver.driver=chrome"
       }
    }
    
