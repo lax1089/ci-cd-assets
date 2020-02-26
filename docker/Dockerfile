@@ -41,7 +41,10 @@ RUN apt-get install -y xvfb
 # Install Python 3 and the Python 3 Package Manager
 RUN apt-get install -y python3
 RUN apt-get install -y python3-pip
+RUN apt-get update
+#RUN apt-get install python3 default-jre-headless python3-tk python3-pip python3-dev \
+#  libxml2-dev libxslt-dev zlib1g-dev net-tools
 
 # Install Taurus
 RUN pip3 install locustio==0.13.5
-RUN pip3 install bzt
+RUN pip3 install bzt==1.14.0
