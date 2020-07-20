@@ -17,17 +17,19 @@ node {
        echo "### Deploy to QA Env ###"  
    }
    
-   stage('Run Functional Tests') {
+   stage('Run Functional and Perf Tests') {
       echo "### Running Functional Tests ###"
       sh "./run.sh"
       //sh "${bzt} find-flights/findflights-test.yml -cloud -func"
       
    }
    
+   /*
    stage('Run Performance Tests') {
        echo "### Running Performance Tests ###"
        //sh "bzt find-flights/findflights-test.yml -cloud"
    }
+   */
    
    stage('Reporting') {
       echo "### Reporting ###"
