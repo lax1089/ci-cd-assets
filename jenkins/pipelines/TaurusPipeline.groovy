@@ -4,7 +4,7 @@ node {
       // Pull code from the GitHub repository
       git branch: 'master',
        credentialsId: 'b97beeb6-e60e-4945-9ae6-bbad875617ef',
-       url: 'https://github.com/lax1089/jmx-examples.git'
+       url: 'ssh://git@github.com/lax1089/jmx-examples.git'
    }
    
    stage('Build') {
