@@ -2,7 +2,7 @@ node {
  
    stage('Pull Tests') {
       // Pull code from the GitHub repository
-      git branch: 'master'
+      git branch: 'master',
        credentialsId: 'f8f53c52-f86d-4ba8-b69b-9dfadf99a4e9',
        url: 'https://github.com/lax1089/jmx-examples.git'
    }
