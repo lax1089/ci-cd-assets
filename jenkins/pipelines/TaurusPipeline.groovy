@@ -16,7 +16,7 @@ node {
    
    stage('Run Functional Tests') {
       echo "### Running Functional Tests ###"
-      sh "bzt find-flights/findflights-test.yml -cloud -func"
+      sh "sudo bzt find-flights/findflights-test.yml -cloud -func"
       
    }
    
