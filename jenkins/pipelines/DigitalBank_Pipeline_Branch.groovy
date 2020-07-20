@@ -19,7 +19,7 @@ node {
       //checkout code
       echo GITHUB_PROJECT_URL
       git url: GITHUB_PROJECT_URL
-      sh 'rm branches.txt'
+      sh 'rm -f branches.txt'
       sh 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' | cut -c 8- >> branches.txt'
       sh 'cat branches.txt'
    }
