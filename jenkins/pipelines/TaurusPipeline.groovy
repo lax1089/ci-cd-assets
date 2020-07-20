@@ -1,6 +1,6 @@
 node {
  
-   def bzt = '/opt/rh/rh-python36/root/usr/bin/bzt'
+   //def bzt = '/opt/rh/rh-python36/root/usr/bin/bzt'
  
    stage('Pull Tests') {
       // Pull code from the GitHub repository
