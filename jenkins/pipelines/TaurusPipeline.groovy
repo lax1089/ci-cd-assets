@@ -16,11 +16,13 @@ node {
    
    stage('Run Functional Tests') {
       echo "### Running Functional Tests ###"
+      sh "bzt findflights-test.yml -cloud -func"
       
    }
    
    stage('Run Performance Tests') {
        echo "### Running Performance Tests ###"
+       //sh "bzt findflights-test.yml -cloud"
    }
    
    stage('Reporting') {
