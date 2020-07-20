@@ -5,6 +5,7 @@ node {
    stage('Pull Tests') {
       // Pull code from the GitHub repository
       git 'https://github.com/lax1089/jmx-examples.git'
+      sh "chmod 755 run.sh"
    }
    
    stage('Build') {
