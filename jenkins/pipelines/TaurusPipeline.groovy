@@ -1,5 +1,7 @@
 node {
  
+   def bzt = '/opt/rh/rh-python36/root/usr/bin/bzt'
+ 
    stage('Pull Tests') {
       // Pull code from the GitHub repository
       git 'https://github.com/lax1089/jmx-examples.git'
@@ -16,7 +18,7 @@ node {
    
    stage('Run Functional Tests') {
       echo "### Running Functional Tests ###"
-      sh "/opt/rh/rh-python36/root/usr/bin/bzt find-flights/findflights-test.yml -cloud -func"
+    sh "${bzt} find-flights/findflights-test.yml -cloud -func"
       
    }
    
