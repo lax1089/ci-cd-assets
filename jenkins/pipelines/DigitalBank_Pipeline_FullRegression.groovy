@@ -45,6 +45,7 @@ node {
         allowMissing: false
       ])
       archiveArtifacts 'target/*.war'
+      currentBuild.result = 'SUCCESS'
    }
    
    stage('Deploy to QA Env') {
