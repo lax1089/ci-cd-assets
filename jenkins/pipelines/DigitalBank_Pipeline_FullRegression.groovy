@@ -37,7 +37,7 @@ node {
    stage('Reporting') {
       junit '**/target/failsafe-reports/TEST-*.xml'
       publishHTML(target: [
-        reportName : 'Serenity',
+        reportName : 'Acceptance Testing Report',
         reportDir:   'target/site/serenity',
         reportFiles: 'index.html',
         keepAll:     true,
