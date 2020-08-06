@@ -48,7 +48,7 @@ node {
    stage('Run Tests') {
       wrap([$class: 'Xvfb', additionalOptions: '', assignedLabels: '', autoDisplayName: true, debug: true, displayNameOffset: 1, installationName: 'default-xvfb', parallelBuild: true, screen: '1440x900x24', timeout: 25]) 
       {
-        sh "'${mvnHome}/bin/mvn' clean verify -Dserver.port=9094 -Dwebdriver.base.url=http://localhost:9094/bank -Ddynamic.webdriver.driver=firefox -Dcucumber.options='--tags @positive' -DskipUnitTests -DbuildNumber=${BUILD_NUMBER} -Dmaven.test.failure.ignore -Dio.demo.bank.atm.host=atmlocationsearch1032-8080-default.mock.blazemeter.com"
+        sh "'${mvnHome}/bin/mvn' clean verify -Dserver.port=9094 -Dwebdriver.base.url=http://localhost:9094/bank -Ddynamic.webdriver.driver=firefox -Dcucumber.options='--tags @positive' -DskipUnitTests -DbuildNumber=${BUILD_NUMBER} -Dmaven.test.failure.ignore -Dio.digisic.bank.atm.host=atmlocationsearch1032-8080-default.mock.blazemeter.com"
       }
    }
    
