@@ -28,7 +28,7 @@ node {
    stage('Pull Tests') {
       echo "Pulling code from BRANCH_SCOPE=${BRANCH_SCOPE}"
       // Pull code from the GitHub repository
-      git branch: "${BRANCH_SCOPE}", url: 'https://github.com/lax1089/jmx-examples.git', changelog: true
+      git branch: "${BRANCH_SCOPE}", url: 'https://github.com/lax1089/jmx-examples.git'
       sh "chmod 755 run.sh"
    }
    
