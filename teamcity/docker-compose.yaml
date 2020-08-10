@@ -23,7 +23,7 @@ services:
 
  teamcity_agent1:
   restart: unless-stopped
-  image: lunarfrog/teamcity-agent-dotnet:latest
+  image: jetbrains/teamcity-agent:latest
   links:
    - teamcity:teamcity
   volumes:
@@ -34,7 +34,7 @@ services:
 
  teamcity_agent2:
   restart: unless-stopped
-  image: lunarfrog/teamcity-agent-dotnet:latest
+  image: jetbrains/teamcity-agent:latest
   links:
    - teamcity:teamcity
   volumes:
@@ -45,7 +45,7 @@ services:
 
  teamcity_agent3:
   restart: unless-stopped
-  image: lunarfrog/teamcity-agent-dotnet:latest
+  image: jetbrains/teamcity-agent:latest
   links:
    - teamcity:teamcity
   volumes:
